@@ -39,22 +39,29 @@ void BTPostOrder(BTNode* bt){
     BTPostOrder(bt->right);
     printf("%c ",bt->data);
 }
-//层序遍历
-void BTLevelOrder(BTNode* bt){
-    if(!bt){
-        printf("%s ","NULL");
-        return;
-    }
 
-}
 //建立二叉树
 void BTBuilt();
 //摧毁二叉树
 void BTdest(BTNode* bt);
+
 //增删查改
 void BTPush(BTDataType data);
 void BTPop(BTDataType data);
-BTNode* BTFind(BTNode* bt,BTDataType data);
+BTNode* BTFind(BTNode* bt,BTDataType data){
+    if(!bt)
+        return NULL;
+    if(bt->data==data)
+        return bt;
+    BTNode* node=BTFind(bt->left,data);
+    if(node)
+        return node;
+    node=BTFind(bt->right,data);
+    if(node)
+        return node;
+    
+    return NULL;
+}
 void BTModi(BTNode* bt,BTDataType data);
 
 
@@ -96,3 +103,9 @@ int BTTiersSize(BTNode* bt,int k){
         return 1;
     return BTTiersSize(bt->left,k-1)+BTTiersSize(bt->right,k-1);    
 }
+
+
+//层序遍历--需要借助队列
+void BTLevelOrder(BTNode* bt);
+//是否完全二叉树
+bool isCompleteBT(BTNode* bt);

@@ -24,8 +24,13 @@ int main(){
     // BTSize_EXV(A,&sum);
     // printf("%d\n",sum);
 
-    int sum_leaf=0;
-    sum_leaf=BTLeafSize(A);
-    printf("%d\n",sum_leaf);
-    return 0;
+    // int sum_leaf=0;
+    // sum_leaf=BTLeafSize(A);
+    // printf("%d\n",sum_leaf);
+
+    // int sum_k=0;
+    // sum_k=BTTiersSize(A,3);
+    // printf("%d\n",sum_k);
+    printf("%c",BTFind(A,'E')->data);
+    return 0; 
 }
