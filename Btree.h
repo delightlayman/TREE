@@ -10,6 +10,11 @@ typedef struct binarytreenode{
     struct binarytreenode* left;
     struct binarytreenode* right;
 }BTNode;
+// typedef struct btree{
+//     BTNode* root;
+//     int size;
+// }BTree;
+d
 //创建节点
 BTNode* CreatBTNode(BTDataType val);
 //前序遍历

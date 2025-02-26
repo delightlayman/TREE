@@ -43,7 +43,7 @@ void BTPostOrder(BTNode* bt){
 }
 
 //初始化二叉树
-void BTInit();
+//void BTInit();
 //摧毁二叉树
 void BTdest(BTNode* bt){
     if(!bt)
