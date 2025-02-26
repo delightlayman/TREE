@@ -25,6 +25,8 @@ void InitQueue(Queue* q){
 //     q->head = q->tail = NULL;
 // }
 void DestQueue(Queue* q){
+    assert(q);
+
     while(q->head){
         Qnode* temp=q->head->next;
         free(q->head);
@@ -35,6 +37,7 @@ void DestQueue(Queue* q){
 }
 //空否？
 bool isEmptyQueue(Queue* q){
+    assert(q);
     return q->size==0;
 }
 //满否？---需设置队列最大长度MaxQueue
@@ -43,11 +46,14 @@ bool isEmptyQueue(Queue* q){
 // }
 //大小
 int QueueSzie(Queue* q){
+    assert(q);
     return q->size;
 }
 
 //入队--尾部
 void QueuePush(Queue* q,QDataType data){
+    assert(q);
+
     Qnode* node=CreatQNode(data);
     if(isEmptyQueue(q)){
         q->head=node;
@@ -60,6 +66,8 @@ void QueuePush(Queue* q,QDataType data){
 }
 //出队--头
 void QueuePop(Queue* q){
+    assert(q);
+    assert(q->head);
     if(isEmptyQueue(q))
         return;
     Qnode* temp=q->head;
@@ -77,3 +85,14 @@ void QueuePop(Queue* q){
 //         cur=cur->next;
 //     }
 // }
+
+//头尾值
+
+QDataType QueueHead(Queue* q){
+    assert(q);
+    return q->head->data;
+}
+QDataType Queuetail(Queue* q){
+    assert(q);
+    return q->tail->data;
+}

@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <assert.h>
 
 struct binarytreenode;//向前声明---Btree包含queue.h---故而不使用extern
 
@@ -39,3 +40,7 @@ void QueuePush(Queue* q,QDataType data);
 void QueuePop(Queue* q);
 //打印queue
 //void QueuePrint(Queue* q);
+//头尾值
+QDataType QueueHead(Queue* q);
+QDataType Queuetail(Queue* q);
+

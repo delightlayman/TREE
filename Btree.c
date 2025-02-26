@@ -126,15 +126,11 @@ void BTLevelOrder(BTNode* bt){
     QueuePush(&s,bt);
 
     while(!isEmptyQueue(&s)){
-        if(!s.head)
-            printf("NULL ");
-        else{
-            printf("%c ",s.head->data);
-            QueuePop(&s);
-        }    
-            
-        if(bt->left) QueuePush(&s,bt->left);
-        if(bt->right) QueuePush(&s,bt->right);
+        QDataType temp=QueueHead(&s);
+        if(temp->left) QueuePush(&s,temp->left);
+        if(temp->right) QueuePush(&s,temp->right);
+        printf("%c ",temp->data);
+        QueuePop(&s);
     }
 }
 //是否完全二叉树
