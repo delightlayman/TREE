@@ -42,10 +42,16 @@ void BTPostOrder(BTNode* bt){
     printf("%c ",bt->data);
 }
 
-//建立二叉树
-void BTBuilt();
+//初始化二叉树
+void BTInit();
 //摧毁二叉树
-void BTdest(BTNode* bt);
+void BTdest(BTNode* bt){
+    if(!bt)
+        return;
+    BTdest(bt->left);
+    BTdest(bt->right);
+    free(bt);
+}
 
 //增删查改
 void BTPush(BTDataType data);
@@ -108,6 +114,23 @@ int BTTiersSize(BTNode* bt,int k){
 
 
 //层序遍历--需要借助队列
-void BTLevelOrder(BTNode* bt);
+//根 先进队列
+//根 出队时，左右子节点 入队
+//直到全部处理完毕---队列为空时，结束
+//逐层次入队出队
+void BTLevelOrder(BTNode* bt){
+    Queue s;
+    InitQueue(&s);
+    QueuePush(&s,bt);
+    while(!isEmptyQueue){
+        if(!s.head)
+            printf("NULL ");
+        else    
+            printf("%c ",s.head->data);
+        QueuePush(&s,bt->left);
+        QueuePush(&s,bt->right);
+        QueuePop(&s);
+    }
+}
 //是否完全二叉树
 bool isCompleteBT(BTNode* bt);

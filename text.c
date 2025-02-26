@@ -33,6 +33,7 @@ int main(){
     // int sum_k=0;
     // sum_k=BTTiersSize(A,3);
     // printf("%d\n",sum_k);
-    printf("%c",BTFind(A,'E')->data);
+    // printf("%c",BTFind(A,'E')->data);
+    BTLevelOrder(A);
     return 0; 
 }

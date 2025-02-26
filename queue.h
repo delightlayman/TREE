@@ -35,6 +35,6 @@ int QueueSzie(Queue* q);
 //入队--尾部
 void QueuePush(Queue* q,QDataType data);
 //出队--头
-void QueuePop();
+void QueuePop(Queue* q);
 //打印queue
 void QueuePrint(Queue* q);

@@ -3,8 +3,11 @@
 //节点创建
 Qnode* CreatQNode(QDataType data){
     Qnode* node=(Qnode*)malloc(sizeof(Qnode));
+    if(!node)
+        return NULL;
     node->data=data;
     node->next=NULL;
+    return node;
 }
 //初始化
 void InitQueue(Queue* q){

@@ -21,8 +21,8 @@ void BTInOrder(BTNode* bt);
 //void RearOrder();
 void BTPostOrder(BTNode* bt);
 
-//建立二叉树
-void BTBuilt();
+//初始化二叉树
+void BTInit();
 //摧毁二叉树
 void BTdest(BTNode* bt);
 
