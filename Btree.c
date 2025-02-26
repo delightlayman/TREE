@@ -34,7 +34,7 @@ void BTInOrder(BTNode* bt){
 //void RearOrder();
 void BTPostOrder(BTNode* bt){
     if(!bt){
-        printf("%s ","NULL");
+        printf("NULL");
         return;
     }     
     BTPostOrder(bt->left);
@@ -119,17 +119,22 @@ int BTTiersSize(BTNode* bt,int k){
 //直到全部处理完毕---队列为空时，结束
 //逐层次入队出队
 void BTLevelOrder(BTNode* bt){
+    if(!bt) return;
+         
     Queue s;
     InitQueue(&s);
     QueuePush(&s,bt);
-    while(!isEmptyQueue){
+
+    while(!isEmptyQueue(&s)){
         if(!s.head)
             printf("NULL ");
-        else    
+        else{
             printf("%c ",s.head->data);
-        QueuePush(&s,bt->left);
-        QueuePush(&s,bt->right);
-        QueuePop(&s);
+            QueuePop(&s);
+        }    
+            
+        if(bt->left) QueuePush(&s,bt->left);
+        if(bt->right) QueuePush(&s,bt->right);
     }
 }
 //是否完全二叉树

@@ -38,9 +38,9 @@ bool isEmptyQueue(Queue* q){
     return q->size==0;
 }
 //满否？---需设置队列最大长度MaxQueue
-bool isFullQueue(Queue* q){
-    return q->size==MaxQueue;
-}
+// bool isFullQueue(Queue* q){
+//     return q->size==MaxQueue;
+// }
 //大小
 int QueueSzie(Queue* q){
     return q->size;
@@ -68,12 +68,12 @@ void QueuePop(Queue* q){
     q->size--;
 }
 
-void QueuePrint(Queue* q){
-    Qnode *cur=q->head;
-    if(!cur)
-        printf("NULL"); 
-    while(cur){
-        printf("%c ",cur->data);
-        cur=cur->next;
-    }
-}
+// void QueuePrint(Queue* q){
+//     Qnode *cur=q->head;
+//     if(!cur)
+//         printf("NULL"); 
+//     while(cur){
+//         printf("%c ",cur->data);
+//         cur=cur->next;
+//     }
+// }
