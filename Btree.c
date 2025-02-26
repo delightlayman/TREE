@@ -81,4 +81,18 @@ int BTLeafSize(BTNode* bt){
     return BTLeafSize(bt->left)+BTLeafSize(bt->right);
 }
 //二叉树深度
-int BTdepth(BTNode* bt);
+int BTdepth(BTNode* bt){
+    if(!bt)
+        return 0;
+    return 1+fmax(BTdepth(bt->left),BTdepth(bt->right));    
+}
+
+//第K层节点的个数
+//当前树的k层节点数 相当于 左右子树的k-1层节点数之和，直到k==1不再分解
+int BTTiersSize(BTNode* bt,int k){
+    if(!bt)
+        return 0;
+    if(k==1)
+        return 1;
+    return BTTiersSize(bt->left,k-1)+BTTiersSize(bt->right,k-1);    
+}

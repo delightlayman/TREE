@@ -38,3 +38,5 @@ int BTSize(BTNode* bt);
 int BTLeafSize(BTNode* bt);
 //二叉树深度
 int BTdepth(BTNode* bt);
+//第K层节点的个数
+int BTTiersSize(BTNode* bt);
