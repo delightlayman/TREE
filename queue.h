@@ -2,8 +2,10 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
+extern struct binarytreenode;
+
 #define MaxQueue 10
-typedef char QDataType;
+typedef struct binarytreenode* QDataType;
 
 typedef struct queuenode{
     QDataType data;

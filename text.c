@@ -1,4 +1,6 @@
 #include "Btree.h"
+#include "queue.h"
+
 int main(){
     BTNode* A=CreatBTNode('A');
     BTNode* B=CreatBTNode('B');

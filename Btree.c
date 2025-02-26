@@ -1,4 +1,6 @@
 #include "Btree.h"
+#include "queue.h"
+
 //创建节点
 BTNode* CreatBTNode(BTDataType val){
     BTNode* newnode=(BTNode*)malloc(sizeof(BTNode));
