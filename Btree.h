@@ -14,7 +14,6 @@ typedef struct binarytreenode{
 //     BTNode* root;
 //     int size;
 // }BTree;
-d
 //创建节点
 BTNode* CreatBTNode(BTDataType val);
 //前序遍历
