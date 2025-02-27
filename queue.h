@@ -39,7 +39,7 @@ void QueuePush(Queue* q,QDataType data);
 //出队--头
 void QueuePop(Queue* q);
 //打印queue
-//void QueuePrint(Queue* q);
+void QueuePrint(Queue* q);
 //头尾值
 QDataType QueueHead(Queue* q);
 QDataType Queuetail(Queue* q);

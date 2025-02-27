@@ -134,4 +134,28 @@ void BTLevelOrder(BTNode* bt){
     }
 }
 //是否完全二叉树
-bool isCompleteBT(BTNode* bt);
+bool isCompleteBT(BTNode* bt){
+    if(!bt) return true;
+         
+    Queue s;
+    InitQueue(&s);
+    QueuePush(&s,bt);
+
+    while(!isEmptyQueue(&s)){
+        QDataType temp=QueueHead(&s);
+        if(!temp)
+            break;
+        QueuePush(&s,temp->left);
+        QueuePush(&s,temp->right);
+        QueuePop(&s);
+    }
+    while (!isEmptyQueue(&s)) {
+        if (QueueHead(&s)){
+            DestQueue(&s);
+            return false;
+        }
+        QueuePop(&s);    
+    }
+    DestQueue(&s);
+    return true;
+}

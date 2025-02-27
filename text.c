@@ -34,6 +34,51 @@ int main(){
     // sum_k=BTTiersSize(A,3);
     // printf("%d\n",sum_k);
     // printf("%c",BTFind(A,'E')->data);
-    BTLevelOrder(A);
+
+    //BTLevelOrder(A);
+    /*Queue q;
+    InitQueue(&q);
+    QueuePush(&q,A);
+    QueuePush(&q,B);
+    QueuePush(&q,C);
+    QueuePush(&q,D);
+    QueuePush(&q,E);*/
+    //printf("%p ", QueueHead(&q));
+    //QueuePop(&q);
+    //printf("%p ", QueueHead(&q));
+    //QueuePop(&q);
+    //printf("%p ", QueueHead(&q));
+    //QueuePop(&q);
+    //printf("%p ", QueueHead(&q));
+    //QueuePop(&q);
+    //printf("%p ", QueueHead(&q));
+    //QueuePop(&q);
+    //printf("%p ", QueueHead(&q));
+
+    printf("%d",isCompleteBT(A));
+
+
+    /*Queue s;
+    InitQueue(&s);
+    QueuePush(&s, A);
+
+    while (!isEmptyQueue(&s)) {
+        QDataType temp = QueueHead(&s);
+        if (!temp)
+            break;
+        QueuePush(&s, temp->left);
+        QueuePush(&s, temp->right);
+        QueuePop(&s);
+    }
+    QueuePrint(&s);
+
+    while (!isEmptyQueue(&s)) {
+        if (QueueHead(&s)){
+            DestQueue(&s);
+            return false;
+        }
+    }
+    QueuePop(&s);
+    DestQueue(&s);*/
     return 0; 
 }

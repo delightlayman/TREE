@@ -26,14 +26,13 @@ void InitQueue(Queue* q){
 // }
 void DestQueue(Queue* q){
     assert(q);
-
     while(q->head){
         Qnode* temp=q->head->next;
         free(q->head);
         q->head=temp;
     }
-        q->size=0;
-        q->head = q->tail = NULL;
+    q->size=0;
+    q->head = q->tail = NULL;
 }
 //空否？
 bool isEmptyQueue(Queue* q){
@@ -73,26 +72,32 @@ void QueuePop(Queue* q){
     Qnode* temp=q->head;
     q->head=temp->next;
     free(temp);
+    temp=NULL;
+    if(!q->size)
+        q->tail=NULL;
     q->size--;
 }
 
-// void QueuePrint(Queue* q){
-//     Qnode *cur=q->head;
-//     if(!cur)
-//         printf("NULL"); 
-//     while(cur){
-//         printf("%c ",cur->data);
-//         cur=cur->next;
-//     }
-// }
+ void QueuePrint(Queue* q){
+     assert(q);
+     assert(q->head);
+     Qnode *cur=q->head;
+
+     while(cur){
+         printf("%p ",cur->data);
+         cur=cur->next;
+     }
+ }
 
 //头尾值
 
 QDataType QueueHead(Queue* q){
     assert(q);
+    assert(q->head);
     return q->head->data;
 }
 QDataType Queuetail(Queue* q){
     assert(q);
+    assert(q->head);
     return q->tail->data;
 }
