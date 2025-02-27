@@ -57,28 +57,5 @@ int main(){
 
     printf("%d",isCompleteBT(A));
 
-
-    /*Queue s;
-    InitQueue(&s);
-    QueuePush(&s, A);
-
-    while (!isEmptyQueue(&s)) {
-        QDataType temp = QueueHead(&s);
-        if (!temp)
-            break;
-        QueuePush(&s, temp->left);
-        QueuePush(&s, temp->right);
-        QueuePop(&s);
-    }
-    QueuePrint(&s);
-
-    while (!isEmptyQueue(&s)) {
-        if (QueueHead(&s)){
-            DestQueue(&s);
-            return false;
-        }
-    }
-    QueuePop(&s);
-    DestQueue(&s);*/
     return 0; 
 }
